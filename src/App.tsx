@@ -15,7 +15,7 @@ function App() {
       </Stack>
 
       <Stack direction='column' justifyContent='center' alignItems='center' paddingTop='100px'>
-        {view === '1' && <b>1</b>}
+        {view === '1' && <b>1111</b>}
         {view === '2' && <b>2</b>}
       </Stack>
     </Box>

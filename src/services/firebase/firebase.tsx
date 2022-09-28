@@ -9,6 +9,7 @@ import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: 'AIzaSyAd-zpQsy9W2d27Hz-WzqGiKABF8UzQJ0E',
   authDomain: 'optibusdemo.firebaseapp.com',
+  databaseURL: 'https://optibusdemo-default-rtdb.europe-west1.firebasedatabase.app',
   projectId: 'optibusdemo',
   storageBucket: 'optibusdemo.appspot.com',
   messagingSenderId: '263336697244',
