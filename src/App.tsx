@@ -1,8 +1,14 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 
 function App() {
-  return <Button variant='contained'>Hello World</Button>;
+  return (
+    <Box width='100%' height='100%'>
+      <Stack spacing={2} padding='10px'>
+        Hello
+      </Stack>
+    </Box>
+  );
 }
 
 export default App;
