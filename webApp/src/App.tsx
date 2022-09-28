@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+import { Box, Button, ButtonGroup, Stack } from '@mui/material';
+
+function App() {
+  const [view, setView] = useState<string>();
+
+  return (
+    <Box width='100%' height='100%' position='relative'>
+      <Stack direction='row' justifyContent='center' alignItems='center' paddingTop='5px'>
+        <ButtonGroup variant='contained'>
+          <Button onClick={() => setView('1')}>One</Button>
+          <Button onClick={() => setView('2')}>Two</Button>
+          <Button>Three</Button>
+        </ButtonGroup>
+      </Stack>
+
+      <Stack direction='column' justifyContent='center' alignItems='center' paddingTop='100px'>
+        {view === '1' && <b>1111</b>}
+        {view === '2' && <b>2</b>}
+      </Stack>
+    </Box>
+  );
+}
+
+export default App;
