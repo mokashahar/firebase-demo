@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "cd webApp && yarn run build && cd .. && firebase deploy --only hosting",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/mokashahar/flight-scan.git",
