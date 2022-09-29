@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Box, Button, ButtonGroup, Stack } from '@mui/material';
+import { getValue } from 'firebase/remote-config';
+import { remoteConfig } from './services/firebase/firebase';
 
 function App() {
   const [view, setView] = useState<string>();
+  console.log('VALUE: ', getValue(remoteConfig, 'MaxLimit').asString());
 
   return (
     <Box width='100%' height='100%' position='relative'>
