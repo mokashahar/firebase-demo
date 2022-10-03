@@ -36,9 +36,7 @@
       "react-app/jest",
       "prettier"
     ],
-    "rules": {
-      "no-alert": "error"
-    }
+    "rules": {}
   },
   "browserslist": {
     "production": [
