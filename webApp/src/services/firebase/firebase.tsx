@@ -1,9 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent, setUserProperties } from "firebase/analytics";
 import { fetchAndActivate, getRemoteConfig } from "firebase/remote-config";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+import { connectFirestoreEmulator, getFirestore } from "firebase/firestore";
+import { connectAuthEmulator, getAuth } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,7 +26,15 @@ export const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+connectFirestoreEmulator(db, 'localhost', 8080);
+connectAuthEmulator(auth, 'http://localhost:9099');
 export const analytics = getAnalytics(app);
 export const remoteConfig = getRemoteConfig(app);
 remoteConfig.settings.minimumFetchIntervalMillis = 1000;
 fetchAndActivate(remoteConfig).then(() => {});
+
+logEvent(analytics, 'Hello user', {
+  content_type: 'image',
+  content_id: 'P12453'
+});
+setUserProperties(analytics, { favorite_food: 'apples' });
