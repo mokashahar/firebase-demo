@@ -4,6 +4,7 @@ import FireStore from './features/FireStore/FireStore';
 import Auth from './features/Auth/Auth';
 import './services/firebase/firebase';
 import RemoteConfig from './features/RemoteConfig/RemoteConfig';
+import Messaging from './features/Messaging/Messaging';
 
 function App() {
   const [view, setView] = useState<string>();
@@ -15,6 +16,7 @@ function App() {
           <Button onClick={() => setView('1')}>Fire Store DB</Button>
           <Button onClick={() => setView('2')}>Auth</Button>
           <Button onClick={() => setView('3')}>Remote Config</Button>
+          <Button onClick={() => setView('4')}>Messaging</Button>
         </ButtonGroup>
       </Stack>
 
@@ -22,6 +24,7 @@ function App() {
         {view === '1' && <FireStore />}
         {view === '2' && <Auth />}
         {view === '3' && <RemoteConfig />}
+        {view === '4' && <Messaging />}
       </Stack>
     </Box>
   );
