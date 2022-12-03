@@ -1,10 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent, setUserProperties } from "firebase/analytics";
-import { fetchAndActivate, getRemoteConfig } from "firebase/remote-config";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-import { getMessaging } from "firebase/messaging";
+import { initializeApp } from 'firebase/app';
+import { getAnalytics, logEvent, setUserProperties } from 'firebase/analytics';
+import { fetchAndActivate, getRemoteConfig } from 'firebase/remote-config';
+import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { getMessaging } from 'firebase/messaging';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
