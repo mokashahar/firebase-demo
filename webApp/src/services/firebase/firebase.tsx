@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics, logEvent, setUserProperties } from 'firebase/analytics';
+import { getAnalytics } from 'firebase/analytics';
 import { fetchAndActivate, getRemoteConfig } from 'firebase/remote-config';
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
@@ -32,11 +32,7 @@ export const db = getFirestore(app);
 export const analytics = getAnalytics(app);
 export const messaging = getMessaging(app);
 export const remoteConfig = getRemoteConfig(app);
+
 remoteConfig.settings.minimumFetchIntervalMillis = 1000;
 fetchAndActivate(remoteConfig).then(() => {});
 
-logEvent(analytics, 'Hello user', {
-  content_type: 'image',
-  content_id: 'P12453'
-});
-setUserProperties(analytics, { favorite_food: 'apples' });
